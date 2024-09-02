@@ -17,11 +17,14 @@ class Game
   def initialize(
     number_of_rows: 6,
     number_of_columns: 6,
-    list_of_blocks: []
+    list_of_blocks: [],
+    production: true
   )
     @number_of_rows = number_of_rows
     @number_of_columns = number_of_columns
     @list_of_blocks = list_of_blocks.dup
+    @production = production
+    @interval = @production ? 0.5 : 0.15
     @initial_row = @number_of_columns.times.inject([]) { |acc, _| acc << 0 }
     @grid = @number_of_rows.times.inject([]) { |acc, _| acc << @initial_row.dup }
     @current_block_cords = []
@@ -39,7 +42,7 @@ class Game
         clear_filled_rows
         retrieve_next_block
       end
-      sleep 0.1
+      sleep @interval
     end
   end
 
@@ -107,7 +110,7 @@ class Game
     end
     @current_block_moves = current_block[:moves] || []
 
-    pp '✨ Adding new block ✨'
+    pp '✨ Adding new block ✨' unless @production
     @current_block_cords.each do |cord|
       _x, y = cord
       cannot_insert_block = @grid[0][y] == 1
@@ -128,7 +131,11 @@ class Game
 
       temp_grid[x][y] = 1
     end
-    pp '---------------------------'
+    if @production
+      Gem.win_platform? ? system('cls') : system('clear')
+    else
+      pp '---------------------------'
+    end
     temp_grid.each { |row| pp row }
   end
 

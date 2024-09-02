@@ -139,4 +139,5 @@ Game.new(
   number_of_rows: test[:rows],
   number_of_columns: test[:columns],
   list_of_blocks: test[:initial_blocks]
+  # production: false
 ).call
