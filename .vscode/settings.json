@@ -1,0 +1,15 @@
+{
+  // Formatting using Prettier by default for all languages
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  // Formatting using RuboCop for Ruby language
+  "[ruby]": {
+    "editor.defaultFormatter": "rubocop.vscode-rubocop",
+    "editor.formatOnSave": true
+  },
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.rubocop": "explicit"
+  }
+}
