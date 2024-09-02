@@ -28,3 +28,8 @@ Turning on production mode means:
 3. Not show debugging messages and outputs
 
 How: Uncomment `# production: false` in `test.rb` to run it in "debugging" mode
+
+## Disclaimer:
+
+- I haven’t tested it extensively, but it should work well unless there’s an unexpected edge case
+- This program assumes the initial blocks passed in have valid starting coordinates and position.
