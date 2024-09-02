@@ -2,6 +2,8 @@
 
 Basic implementation of Tetris game in Ruby
 
+![Demo](demo.gif)
+
 ## Limited features:
 
 - Print grid every round
