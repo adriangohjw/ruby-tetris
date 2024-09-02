@@ -1,17 +1,5 @@
 # frozen_string_literal: true
 
-# Tetris
-## Add grid + print grid
-## Add falling piece
-## Line remover (If row filled clear it)
-## If there's time move left and right
-
-# block
-# L
-# Z
-# one
-# T
-
 ONE_DOT = :one_dot
 ROW_OF_3 = :row_of_three
 COLUMN_OF_3 = :column_of_three
